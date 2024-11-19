@@ -1,16 +1,18 @@
 import { fn } from "@storybook/test";
-import type { UnsafeUnwrappedDraftMode } from "next/dist/server/request/draft-mode";
-import * as originalHeaders from "next/dist/server/request/draft-mode";
+import { draftMode as originalDraftMode } from "next/dist/server/request/draft-mode";
+import * as headers from "next/dist/server/request/headers";
 import type { Mock } from "vitest";
 
 // mock utilities/overrides (as of Next v15.0.3)
 export { headers } from "./headers";
 export { cookies } from "./cookies";
 
-type DraftMode = Promise<UnsafeUnwrappedDraftMode>;
+// re-exports of the actual module
+export { UnsafeUnwrappedHeaders } from "next/dist/server/request/headers";
 
 // passthrough mocks - keep original implementation but allow for spying
-const draftMode: Mock<() => DraftMode> = fn(originalHeaders.draftMode).mockName(
-  "draftMode",
-);
+const draftMode: Mock<() => ReturnType<typeof originalDraftMode>> = fn(
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  originalDraftMode ?? (headers as any).draftMode,
+).mockName("draftMode");
 export { draftMode };
