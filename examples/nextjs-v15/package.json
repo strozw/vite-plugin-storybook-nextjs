@@ -1,0 +1,59 @@
+{
+  "name": "nextjs-v15-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest --project=next",
+    "test:storybook": "vitest --project=storybook --reporter=verbose",
+    "test:all": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "inspect": "serve .storybook/.vite-inspect"
+  },
+  "dependencies": {
+    "next": "^15.0.3",
+    "react": "^19.0.0-rc",
+    "react-dom": "^19.0.0-rc",
+    "styled-jsx": "^5.1.6"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-actions": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/addon-essentials": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/addon-toolbars": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/blocks": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/experimental-addon-test": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/experimental-nextjs-vite": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/react": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/test": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/nextjs": "0.0.0-pr-29640-sha-3521df0d",
+    "@testing-library/dom": "^10.3.2",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "@vitest/browser": "^2.1.4",
+    "autoprefixer": "^10.4.19",
+    "bootstrap": "^5.3.3",
+    "chromatic": "^11.7.0",
+    "happy-dom": "^14.12.3",
+    "jsdom": "^24.1.1",
+    "playwright": "^1.45.3",
+    "postcss": "^8.4.38",
+    "serve": "^14.2.3",
+    "storybook": "0.0.0-pr-29640-sha-3521df0d",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5",
+    "vite-plugin-inspect": "^0.8.5",
+    "vitest": "^2.1.4"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  }
+}
